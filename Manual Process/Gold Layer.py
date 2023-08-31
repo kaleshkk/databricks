@@ -10,7 +10,7 @@ from pyspark.sql.functions import *
 
 # COMMAND ----------
 
-sales_orders_cleaned = spark.sql("SELECT * FROM global_temp.sales_orders_cleaned")
+sales_orders_cleaned = spark.sql("SELECT * FROM main.dev_manual.sales_orders_cleaned")
 # Filter the DataFrame for orders in 'NY'
 sales_order_in_ny = sales_orders_cleaned.filter(sales_orders_cleaned.state == 'NY')
 
@@ -37,7 +37,7 @@ sales_order_in_ny = sales_order_in_ny.groupBy(
 
 # Show the result
 sales_order_in_ny.show()
-sales_order_in_ny.createOrReplaceGlobalTempView("sales_order_in_ny")
+sales_order_in_ny.write.saveAsTable("main.dev_manual.sales_order_in_ny")
 
 
 # COMMAND ----------
