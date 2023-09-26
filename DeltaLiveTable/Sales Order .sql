@@ -153,3 +153,17 @@ AS
 -- MAGIC * Data quality metrics
 -- MAGIC
 -- MAGIC Refer to this <a href="$./DE 8.3 - Pipeline Results" target="_blank">companion notebook</a> to inspect tables and logs.
+
+-- COMMAND ----------
+
+-- MAGIC %python
+-- MAGIC import dlt
+-- MAGIC
+-- MAGIC @dlt.table
+-- MAGIC def sales_order_in_ny_table():
+-- MAGIC     spark.table("dev.default.sales_order_in_ny").show()
+-- MAGIC     return spark.table("dev.default.sales_order_in_ny")
+
+-- COMMAND ----------
+
+
