@@ -1,6 +1,6 @@
 # Databricks notebook source
-dataset = "ubs/orders"
-landing_location = f"s3a://retail-bucket-s3/{dataset}/*"
+dataset = "ubs"
+landing_location = f"s3a://retail-bucket-s3/landing/{dataset}/*"
 schema_location = f"s3a://retail-bucket-s3/schema/{dataset}"
 bronze_location = f"s3a://retail-bucket-s3/bronze/{dataset}"
 checkpoint_location = f"s3a://retail-bucket-s3/checkpoint/bronze/{dataset}"
